@@ -60,13 +60,13 @@ class MongoDB:
 
 def parse_cli_args(test_data=""):
     parser = argparse.ArgumentParser(description='Export backup from PT AF')
-    parser.add_argument('-s', '--schedule',
+    parser.add_argument('-t', '--task-schedule',
                         action='store',
                         dest='SCHEDULE',
                         default=DEFAULT_SCHEDULE,
                         required=False,
                         help='Name of Task Schedule to check, e.g. "Main settings"')
-    parser.add_argument('-h', '--host',
+    parser.add_argument('-s', '--server',
                         action='store',
                         dest='HOST',
                         default=DEFAULT_HOST,
@@ -113,7 +113,7 @@ class Run:
         self.mongo = mongo
         self.schedule_name = args.SCHEDULE
         self.host = args.HOST
-        self.path = args.PATH
+        self.path = args.FOLDER
         self.domain = args.DOMAIN
         self.login = args.LOGIN
         self.password = args.PASSWORD
