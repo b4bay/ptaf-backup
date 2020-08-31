@@ -154,7 +154,7 @@ class Run:
             outfile.write(gridfs_file.read())
 
     def upload_file(self):
-        conn = SMBConnection(self.login, self.password, socket.gethostname(), self.domain, is_direct_tcp=True)
+        conn = SMBConnection(self.login, self.password, socket.gethostname(), self.domain, use_ntlm_v2=True, is_direct_tcp=True)
         conn.connect(self.host, port=445)
         with open(self.outfilename, 'rb') as outfile:
             conn.storeFile(self.path, self.outfilename, outfile, timeout=300)
