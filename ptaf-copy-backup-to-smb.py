@@ -79,7 +79,7 @@ def parse_cli_args(test_data=""):
                         dest='FOLDER',
                         default=DEFAULT_PATH,
                         required=False,
-                        help='Path to share excluding root, e.g. folder1\\subfolder')
+                        help='Path to share excluding root, e.g. folder1')
     parser.add_argument('-d', '--domain',
                         dest='DOMAIN',
                         required=False,
